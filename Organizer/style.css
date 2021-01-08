@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav{
+    width: 100%;
+    height: 120px;
+    background-color: blueviolet;
+
+}
+.heading{
+    color: white;
+    position: absolute;
+    left: 200px;
+    top: 30px;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 2rem;
+    font-family: 'Courgette', cursive;
+font-family: 'Satisfy', cursive;
+}
+.logo{
+    position: relative;
+    left: 100px;
+    top: 5px;
+}
+.btn1{
+    position: absolute;
+    right: 175px;
+    font-size: 24px;
+    top:30px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+
+}
+.btn2{
+    position: absolute;
+    right:50px;
+    font-size: 24px;
+    top:30px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+}
+
+.main-left{
+    width: 40%;
+    height:500px;
+    background-color: cornsilk;
+}
+.foot{
+    background-color: black;
+    height: 150px;
+}
