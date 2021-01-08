@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body{
+            background-color: whitesmoke;
+            text-align: center;
+        }
+        .tabl{
+            margin: auto;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1><center>Events</center></h1>
+    <table class="tabl">
+        <tr>
+            <th>Event name</th>
+            <th>Event type</th>
+            <th>Event date</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>nss</td>
+            <td>ejd</td>
+            <td>12/01/21</td>
+            <td>slkdj</td>
+        </tr>
+
+        <tr>
+            <td>nsdkj</td>
+            <td>skjs</td>
+            <td>slk</td>
+            <td>sdg</td>
+        </tr>
+
+        <tr>
+            <td>nsdkj</td>
+            <td>skjs</td>
+            <td>slk</td>
+            <td>sdg</td>
+        </tr>
+        <tr>
+            <td>nsdkj</td>
+            <td>skjs</td>
+            <td>slk</td>
+            <td>sdg</td>
+        </tr>
+        
+    </table>
+
+
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Link with href
+        </a>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Button with data-bs-target
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+    <?php
+                $connect=mysqli_connect('localhost','root','','event_management_nitc');
+                if(mysqli_connect_errno($connect))
+                {
+                    echo 'Failed to connect to database: '.mysqli_connect_error();
+                }
+                else
+                {
+                    $query1=mysqli_query($connect,"select e.Event_Name,e.Event_Date, e.Location_Id, e.Status_Id from events as e order by e.Event_Date")or die("Error: " . mysqli_error($connect));
+                    echo "<h2>". "People who are already registered in the Database are:". "</h2>";  ;   
+                    echo "<table border='2'>
+                    <tr>
+                    <th>Event Name</th>
+                    <th>Event Date</th>
+                    <th>Event Location</th>
+                    <th>Event Status</th>
+                
+                    </tr>"; 
+                    // Execute the query
+                    while($row1=mysqli_fetch_array($query1))
+                    {
+                        echo "<tr>";
+                        echo "<td>" . $row1[0] . "</td>";
+                        echo "<td>" . $row1[1] . "</td>";
+                        echo "<td>" . $row1[2] . "</td>";
+                        echo "<td>" . $row1[3] . "</td>";
+                        
+                        echo "</tr>";
+                    }
+                // Close the database connection
+                    $connect->close();
+                }
+            ?>
+    
+</body>
+</html>
